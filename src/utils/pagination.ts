@@ -80,7 +80,7 @@ const paginate = async <T extends DB.Document>(
   const totalDocuments = await model.countDocuments(query);
 
   // Fetch data with optional population
-  let dataQuery = model.find(query).select(select).sort(sort).skip(skip).limit(limit);
+  let dataQuery: any = model.find(query).select(select).sort(sort).skip(skip).limit(limit);
 
   // Apply population if provided
   if (populate.length > 0) {
@@ -89,7 +89,7 @@ const paginate = async <T extends DB.Document>(
     });
   }
 
-  const data = await dataQuery;
+  const data: T[] = await dataQuery;
   const totalPages = Math.ceil(totalDocuments / limit);
 
   return {
