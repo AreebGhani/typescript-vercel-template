@@ -186,7 +186,7 @@ This project uses [Swagger UI](https://swagger.io/) to provide an interactive AP
 To access the API documentation:
 
 1. Start the development server
-2. Once the server is running, open your web browser and navigate to: `/api/v2/docs`
+2. Once the server is running, open your web browser and navigate to: `/api/v1/docs`
 
 ### Learn More
 
