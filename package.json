@@ -17,7 +17,7 @@
     "dev": "echo ⚙️ Configuring Environment for development... && cross-env NODE_ENV=development node ./scripts/run.js",
     "dev:docs": "echo 📜 Configuring Environment for development... && vite --config ./docs/vite.config.ts",
     "deploy": "echo 🔨 Starting Deployment... && npm run build && vercel && echo ✅ Deployment Completed",
-    "prepare": "echo 🐶 Husky preparing... && husky && npm run build",
+    "prepare": "echo 🐶 Husky preparing... && husky",
     "lint": "echo 🔧 ESLint fixing... && eslint . --quiet --fix",
     "lint:check": "echo 🔍 ESLint checking... && eslint .",
     "format": "echo ✨ Prettier formatting... && prettier --write .",
