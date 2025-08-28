@@ -2,6 +2,11 @@
 import type http from 'http';
 import { type Server, type DefaultEventsMap } from 'socket.io';
 /**
+ * The main Express application instance.
+ * Use this to configure middleware, routes, and other server settings.
+ */
+export declare const app: import("express-serve-static-core").Express;
+/**
  ** Starts the server and sets up the necessary configurations.
  * @returns An object containing the HTTP server and the Socket.IO server.
  * @property {http.Server<typeof http.IncomingMessage, typeof http.ServerResponse>} http - The HTTP server instance.

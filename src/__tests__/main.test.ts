@@ -1,7 +1,7 @@
 import request from 'supertest'; // Supertest is great for testing Express routes
 import mongoose from 'mongoose'; // To disconnect MongoDB connection after all tests
 
-import server from '@/index'; // Import Express app
+import { serverInstance as server } from '@/index'; // Import Express app
 import { cronJobs } from '@/services'; // To stop cron jobs after all tests
 
 afterAll(done => {

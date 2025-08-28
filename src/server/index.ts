@@ -29,6 +29,12 @@ const freePort = async (port: number): Promise<number> => {
 };
 
 /**
+ * The main Express application instance.
+ * Use this to configure middleware, routes, and other server settings.
+ */
+export const app = express();
+
+/**
  ** Starts the server and sets up the necessary configurations.
  * @returns An object containing the HTTP server and the Socket.IO server.
  * @property {http.Server<typeof http.IncomingMessage, typeof http.ServerResponse>} http - The HTTP server instance.
@@ -44,7 +50,6 @@ const startServer = async (): Promise<{
   http: http.Server<typeof http.IncomingMessage, typeof http.ServerResponse>;
   io: Server<DefaultEventsMap, DefaultEventsMap, DefaultEventsMap, any>;
 }> => {
-  const app = express();
   const PORT = await freePort(Number(env.PORT));
 
   // Setup the http server
