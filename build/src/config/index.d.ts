@@ -1,0 +1,22 @@
+declare const _default: Readonly<{
+    APP_NAME: string;
+    PORT: string;
+    NODE_ENV: string;
+    ORIGINS: string;
+    PUBLIC_URL: string;
+    FRONTEND_URL: string;
+    API_VERSION: string;
+    DATABASE_URL: string;
+    SESSION_SECRET: string;
+    JWT_SECRET_KEY: string;
+    JWT_EXPIRES: string;
+    STORAGE_ACCESS_KEY_ID: string;
+    STORAGE_SECRET_KEY_ID: string;
+    STORAGE_ENDPOINT: string;
+    STORAGE_BUCKET_NAME: string;
+    SMTP_HOST: string;
+    SMTP_PORT: string;
+    SMTP_EMAIL: string;
+    SMTP_PASSWORD: string;
+}>;
+export default _default;
