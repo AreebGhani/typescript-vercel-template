@@ -1,0 +1,34 @@
+node_modules
+dist
+dist-ssr
+coverage
+build
+tmp
+
+# lock file
+*-lock.json
+*-lock.yaml
+*.lock
+
+# logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# local env files
+.env
+.env*.local
+
+# Editor directories and files
+.vercel
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
