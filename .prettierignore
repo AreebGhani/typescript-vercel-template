@@ -2,8 +2,10 @@ node_modules/**
 package.json
 yarn.lock
 build/**
+dist/
 src/json/**
 public/**
+index.html
 coverage
 .vscode
 .prettirrc
