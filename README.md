@@ -113,6 +113,12 @@ That script will:
 1. Run the TypeScript build
 2. Call the Vercel CLI to deploy
 3. After successful deployment, Vercel will return a URL like: ``` https://your-app-name.vercel.app ```
+4. Add the following in **Vercel Dashboard → Project Settings → Build & Deployment → Project Settings**:
+   1. Framework Preset to "Other"
+   2. Build Command to "npm run build"
+   3. Output Directory to "."
+   4. Install Command to "npm install"
+   5. Deployment Command to "None".
 
 ### Scripts
 
