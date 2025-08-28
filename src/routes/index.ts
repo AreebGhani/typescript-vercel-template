@@ -1,7 +1,11 @@
 import express, { type Router } from 'express';
 
-import env from '@/config';
 import { StatusCode, ApiPath } from '@/constants';
+import AuthRoutes from './auth';
+import UserRoutes from './user';
+import UploadRoutes from './upload';
+import SystemRoutes from './system';
+import DocsRoutes from './docs';
 
 const router: Router = express.Router();
 
@@ -9,23 +13,10 @@ router.get('/', (req, res) => {
   res.status(StatusCode.OK).json({ success: true, path: ApiPath });
 });
 
-for (const [key, value] of Object.entries(ApiPath)) {
-  try {
-    if (key !== 'Base' && value && typeof value === 'object' && 'Base' in value) {
-      void (async () => {
-        const routes = await import(
-          `./${key.toLowerCase()}.${env.NODE_ENV === 'production' ? 'js' : 'ts'}`
-        );
-        router.use(`${value.Base}`, routes.default || routes);
-      })();
-    }
-  } catch (err) {
-    // eslint-disable-next-line no-console
-    console.log(
-      `\nFailed to load route module for "${key}" at: \x1b[31msrc/routes/${key.toLowerCase()}.${env.NODE_ENV === 'production' ? 'js' : 'ts'}\x1b[0m\n`
-    );
-    process.exit(1);
-  }
-}
+router.use(ApiPath.Auth.Base, AuthRoutes);
+router.use(ApiPath.User.Base, UserRoutes);
+router.use(ApiPath.Upload.Base, UploadRoutes);
+router.use(ApiPath.System.Base, SystemRoutes);
+router.use(ApiPath.Docs.Base, DocsRoutes);
 
 export default router;
